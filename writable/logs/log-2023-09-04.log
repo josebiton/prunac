@@ -1,0 +1,109 @@
+ERROR - 2023-09-04 02:43:13 --> mysqli_sql_exception: Unknown column 'clientes.idcliente' in 'where clause' in C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\prunac\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\prunac\system\Model.php(200): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\prunac\system\BaseModel.php(557): CodeIgniter\Model->doFind(true, '1')
+#6 C:\xampp\htdocs\prunac\app\Controllers\Clientes.php(193): CodeIgniter\BaseModel->find('1')
+#7 C:\xampp\htdocs\prunac\system\CodeIgniter.php(932): App\Controllers\Clientes->update('1')
+#8 C:\xampp\htdocs\prunac\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+#9 C:\xampp\htdocs\prunac\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\prunac\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-09-04 02:43:13 --> Unknown column 'clientes.idcliente' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `clientes`
+WHERE `clientes`.`idcliente` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `clientes`
+WHERE `clientes`.`idcliente` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `clientes`
+WHERE `clientes`.`idcliente` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clientes`
+WHERE `clientes`.`idcliente` = :clientes.idcliente:', [...], false)
+ 5 SYSTEMPATH\Model.php(200): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(557): CodeIgniter\Model->doFind(true, '1')
+ 7 APPPATH\Controllers\Clientes.php(193): CodeIgniter\BaseModel->find('1')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Clientes->update('1')
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-04 02:45:22 --> mysqli_sql_exception: Unknown column 'c.estado' in 'where clause' in C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\prunac\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\prunac\app\Models\ClientesModel.php(28): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\prunac\app\Controllers\Clientes.php(63): App\Models\ClientesModel->getId('1')
+#6 C:\xampp\htdocs\prunac\system\CodeIgniter.php(932): App\Controllers\Clientes->show('1')
+#7 C:\xampp\htdocs\prunac\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+#8 C:\xampp\htdocs\prunac\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\prunac\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-09-04 02:45:22 --> Unknown column 'c.estado' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `clientes` `cl`
+WHERE `cl`.`idclientes` = \'1\'
+AND `c`.`estado` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `clientes` `cl`
+WHERE `cl`.`idclientes` = \'1\'
+AND `c`.`estado` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `clientes` `cl`
+WHERE `cl`.`idclientes` = \'1\'
+AND `c`.`estado` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clientes` `cl`
+WHERE `cl`.`idclientes` = :cl.idclientes:
+AND `c`.`estado` = :c.estado:', [...], false)
+ 5 APPPATH\Models\ClientesModel.php(28): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Clientes.php(63): App\Models\ClientesModel->getId('1')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Clientes->show('1')
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-04 03:09:35 --> mysqli_sql_exception: Unknown column 'c.idclientes' in 'on clause' in C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\prunac\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\prunac\app\Models\OpinionesModel.php(18): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\prunac\app\Controllers\Opiniones.php(23): App\Models\OpinionesModel->getComentarios()
+#6 C:\xampp\htdocs\prunac\system\CodeIgniter.php(932): App\Controllers\Opiniones->index()
+#7 C:\xampp\htdocs\prunac\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Opiniones))
+#8 C:\xampp\htdocs\prunac\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\prunac\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-09-04 03:09:35 --> Unknown column 'c.idclientes' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `comentarios` `cm`
+JOIN `clientes` `cl` ON `cm`.`idclientes` = `c`.`idclientes`
+WHERE `cm`.`estado` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `comentarios` `cm`
+JOIN `clientes` `cl` ON `cm`.`idclientes` = `c`.`idclientes`
+WHERE `cm`.`estado` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `comentarios` `cm`
+JOIN `clientes` `cl` ON `cm`.`idclientes` = `c`.`idclientes`
+WHERE `cm`.`estado` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `comentarios` `cm`
+JOIN `clientes` `cl` ON `cm`.`idclientes` = `c`.`idclientes`
+WHERE `cm`.`estado` = :cm.estado:', [...], false)
+ 5 APPPATH\Models\OpinionesModel.php(18): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Opiniones.php(23): App\Models\OpinionesModel->getComentarios()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Opiniones->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Opiniones))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

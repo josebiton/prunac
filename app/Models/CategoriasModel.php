@@ -4,26 +4,26 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ClientesModel extends Model
+class CategoriasModel extends Model
 {
-  protected $table      = 'clientes';
-  protected $primaryKey = 'idclientes';
+  protected $table      = 'categoria';
+  protected $primaryKey = 'idcategoria';
   protected $returnType     = 'array';
-  protected $allowedFields = ['nombreCliente','apellidoCliente','emailCliente','estado'];
+  protected $allowedFields = ['nombreCategoria','descripcionCategoria','estado'];
 
-  public function getClientes()
+  public function getCategorias()
   {
-    return $this->db->table('clientes cl')
-      ->Where('cl.estado', 1)
+    return $this->db->table('categoria c')
+      ->Where('c.estado', 1)
       /*->join('producto p', 'c.idcategoria = p.idproducto')*/
       ->get()->getResultArray();
   }
 
   public function getId($id)
   {
-    return $this->db->table('clientes cl')
-    ->Where('cl.idclientes', $id)
-      ->Where('cl.estado', 1)
+    return $this->db->table('categoria c')
+    ->Where('c.idcategoria', $id)
+      ->Where('c.estado', 1)
       
       ->get()->getResultArray();
   }

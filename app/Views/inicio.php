@@ -2,7 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$curl = curl_init();
 	curl_setopt_array($curl, array(
-		CURLOPT_URL => 'https://minimarkets.informaticapp.com/registros',
+		CURLOPT_URL => 'http://localhost/prunac/registros',
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_ENCODING => '',
 		CURLOPT_MAXREDIRS => 10,
@@ -59,12 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			<h2 class="col-xl-12 text-center">Desarrolla aplicaciones con nosotros</h2>
 			<h3 class="col-xl-12 text-center">Accede a nuestros servicios</h3>
 			<div class="row col-xl-10 offset-1 alert alert-light">
-				Bienvenidos, la presente plataforma contiene la API desarrollada para el modelo de negocio.
-				La API permite el acceso directo al trabajo con la información de nuestra base de datos desde tu aplicación.
-				Usa una interfaz RESTful y retorna los datos en formato JSON.
-				La información invocadas a través de la API proveen un acceso estándar online a datos contenidos en páginas HTML y otros archivos similares disponibles en Internet.
-				Registre sus datos y consiga la autorización para trabajar en nuestra plataforma, ya que requiere de datos de autorización,
-				la puedes solicitar a través del siguiente formulario:
+				
 
 			</div>
 

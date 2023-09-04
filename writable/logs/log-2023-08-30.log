@@ -1,0 +1,22 @@
+CRITICAL - 2023-08-30 03:45:41 --> Trying to access array offset on value of type null
+in APPPATH\Views\inicio.php on line 68.
+ 1 APPPATH\Views\inicio.php(68): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\prunac\\app\\Views\\inicio.php', 68)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\prunac\\app\\Views\\inicio.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('inicio', [], true)
+ 5 APPPATH\Controllers\Home.php(9): view('inicio')
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-30 03:46:29 --> Trying to access array offset on value of type null
+in APPPATH\Views\inicio.php on line 74.
+ 1 APPPATH\Views\inicio.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\prunac\\app\\Views\\inicio.php', 74)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\prunac\\app\\Views\\inicio.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('inicio', [], true)
+ 5 APPPATH\Controllers\Home.php(9): view('inicio')
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

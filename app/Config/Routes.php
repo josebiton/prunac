@@ -52,23 +52,13 @@ $routes->set404Override();
 
 $routes->post('login2', 'Auth::loginlocal');
 
-$routes->resource('tiendas');
-$routes->resource('sucursales');
+
 $routes->resource('registros');
-$routes->resource('clientes');
 $routes->resource('productos');
-$routes->resource('ventas');
-$routes->resource('marcas');
-$routes->resource('usuarios');
-$routes->resource('roles');
-$routes->resource('unidadesMedida');
-$routes->resource('permisos');
-$routes->resource('inventarios');
-$routes->resource('proveedores');
-$routes->resource('compras');
-$routes->resource('comprasDetalle');
-$routes->resource('detallesVenta');
-$routes->resource('categoriasProductos');
+$routes->resource('categorias');
+$routes->resource('clientes');
+$routes->resource('opiniones');
+
 
 
 

@@ -1,9 +1,9 @@
 <?php
 namespace App\Controllers;
 use CodeIgniter\Controller;
-use App\Models\ClientesModel;
+use App\Models\CategoriasModel;
 use App\Models\RegistrosModel;
-class Clientes extends Controller{
+class Categorias extends Controller{
     public function index(){
         $request = \Config\Services::request();
         $validation = \Config\Services::validation();
@@ -14,19 +14,19 @@ class Clientes extends Controller{
         foreach($registro as $key=>$value){
             if(array_key_exists('Authorization',$headers) && !empty($headers['Authorization'])){
                 if($request->getHeader('Authorization')=='Authorization: Basic '.base64_encode($value['cliente_id'].':'.$value['llave_secreta'])){
-                    $model = new ClientesModel();
-                    $cliente = $model->getClientes();
-                    if(!empty($cliente)){
+                    $model = new CategoriasModel();
+                    $categoria = $model->getCategorias();
+                    if(!empty($categoria)){
                         $data = array(
                             "status" => 200,
-                            "total de registros"=>count($cliente),
-                            "Detalles" => $cliente
+                            "total de registros"=>count($categoria),
+                            "Detalles" => $categoria
                         );
                     }
                     else{
                         $data = array(
                             "status" => 200,
-                            "total de registros"=>count($cliente),
+                            "total de registros"=>count($categoria),
                             "Detalles" => "no hay registros"
                         );
                     }
@@ -59,18 +59,18 @@ class Clientes extends Controller{
         foreach($registro as $key=>$value){
             if(array_key_exists('Authorization',$headers) && !empty($headers['Authorization'])){
                 if($request->getHeader('Authorization')=='Authorization: Basic '.base64_encode($value['cliente_id'].':'.$value['llave_secreta'])){
-                    $model = new ClientesModel();
-                    $cliente = $model->getId($id);
-                    if(!empty($cliente)){
+                    $model = new CategoriasModel();
+                    $categoria = $model->getId($id);
+                    if(!empty($categoria)){
                         $data = array(
                             "status" => 200,
-                            "Detalles" => $cliente
+                            "Detalles" => $categoria
                         );
                     }
                     else{
                         $data = array(
                             "status" => 404,
-                            "Detalles" => "No hay registro del Cliente"
+                            "Detalles" => "No hay registro o tu código está mal -_-"
                         );
                     }
                     return json_encode($data, true);
@@ -78,7 +78,7 @@ class Clientes extends Controller{
                 else{
                     $data = array(
                         "Status"=>404,
-                        "Detalles"=>"El token es incorrecto "
+                        "Detalles"=>"El token es incorrecto o tu código está mal -_-"
                     );
                 }
             }
@@ -103,18 +103,14 @@ class Clientes extends Controller{
             if(array_key_exists('Authorization',$headers) && !empty($headers['Authorization'])){
                 if($request->getHeader('Authorization')=='Authorization: Basic '.base64_encode($value['cliente_id'].':'.$value['llave_secreta'])){
                         $datos = array(
-                            "nombreCliente"=>$request->getVar("nombreCliente"),
-                            "apellidoCliente"=>$request->getVar("apellidoCliente"),
-                            "emailCliente"=>$request->getVar("emailCliente")
-                            
+                            "nombreCategoria"=>$request->getVar("nombreCategoria"),
+                            "descripcionCategoria"=>$request->getVar("descripcionCategoria")
                             
                         );
                         if(!empty($datos)){
                             $validation->setRules([
-                                "nombreCliente"=>'required|string|max_length[255]',
-                                "apellidoCliente"=>'required|string|max_length[255]',
-                                "emailCliente" =>'required|string|max_length[255]'
-
+                                "nombreCategoria"=>'required|string|max_length[255]',
+                                "descripcionCategoria"=>'required|string|max_length[255]'
                                 
                             ]);
                             $validation->withRequest($this->request)->run();
@@ -125,13 +121,12 @@ class Clientes extends Controller{
                             }
                             else{
                                 $datos = array(
-                                    "nombreCliente"=>$datos["nombreCliente"],
-                                    "apellidoCliente"=>$datos["apellidoCliente"],
-                                    "emailCliente"=>$datos["emailCliente"],
+                                    "nombreCategoria"=>$datos["nombreCategoria"],
+                                    "descripcionCategoria"=>$datos["descripcionCategoria"]
                                    
                                 );
-                                $model = new ClientesModel();
-                                $cliente = $model->insert($datos);
+                                $model = new CategoriasModel();
+                                $categoria = $model->insert($datos);
                                 $data = array(
                                     "Status"=>200,
                                     "Detalle"=>"Registro existoso"
@@ -177,9 +172,8 @@ class Clientes extends Controller{
                         $datos = $this->request->getRawInput();
                         if(!empty($datos)){
                             $validation->setRules([
-                              "nombreCliente"=>'required|string|max_length[255]',
-                              "apellidoCliente"=>'required|string|max_length[255]',
-                              "emailCliente" =>'required|string|max_length[255]'
+                                "nombreCategoria"=>'required|string|max_length[255]',
+                                "descripcionCategoria"=>'required|string|max_length[255]'
                                 
                             ]);
                             $validation->withRequest($this->request)->run();
@@ -189,9 +183,9 @@ class Clientes extends Controller{
                                 return json_encode($data, true);
                             }
                             else{
-                                $model = new ClientesModel();
-                                $cliente = $model->find($id);
-                                if(is_null($cliente)){
+                                $model = new CategoriasModel();
+                                $categoria = $model->find($id);
+                                if(is_null($categoria)){
                                     $data = array(
                                         "Status"=>404, 
                                         "Detalles"=>"registro no existe"
@@ -199,13 +193,12 @@ class Clientes extends Controller{
                                     return json_encode ($data, true);
                                 }else{
                                     $datos = array(
-                                      "nombreCliente"=>$datos["nombreCliente"],
-                                      "apellidoCliente"=>$datos["apellidoCliente"],
-                                      "emailCliente"=>$datos["emailCliente"],
+                                        "nombreCategoria"=>$datos["nombreCategoria"],
+                                        "descripcionCategoria"=>$datos["descripcionCategoria"]
                                         
                                     );
-                                    $model = new ClientesModel();
-                                    $cliente  = $model->update($id, $datos);
+                                    $model = new CategoriasModel();
+                                    $categoria  = $model->update($id, $datos);
                                     $data = array(
                                         "Status"=>200, 
                                         "Detalles"=>"datos actualizados"
@@ -249,11 +242,11 @@ class Clientes extends Controller{
         foreach($registro as $key=>$value){
             if(array_key_exists('Authorization',$headers) && !empty($headers['Authorization'])){
                 if($request->getHeader('Authorization')=='Authorization: Basic '.base64_encode($value['cliente_id'].':'.$value['llave_secreta'])){
-                    $model = new ClientesModel();
-                    $cliente = $model->where('estado',1)->find($id);
-                    if(!empty($cliente)){
+                    $model = new CategoriasModel();
+                    $categoria = $model->where('estado',1)->find($id);
+                    if(!empty($categoria)){
                         $datos = array("estado"=>0);
-                        $cliente = $model->update($id, $datos);
+                        $categoria = $model->update($id, $datos);
                         $data = array(
                             "status" => 200,
                             "Detalles" => "se ha eliminado el registro"
@@ -262,7 +255,7 @@ class Clientes extends Controller{
                     else{
                         $data = array(
                             "status" => 404,
-                            "Detalles" => "No hay registros "
+                            "Detalles" => "No hay registros o tu código está mal -_-"
                         );
                     }
                     return json_encode($data, true);
@@ -270,7 +263,7 @@ class Clientes extends Controller{
                 else{
                     $data = array(
                         "Status"=>404,
-                        "Detalles"=>"El token es incorrecto "
+                        "Detalles"=>"El token es incorrecto o tu código está mal -_-"
                     );
                 }
             }

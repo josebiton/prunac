@@ -1,0 +1,358 @@
+ERROR - 2023-08-31 03:06:49 --> mysqli_sql_exception: Unknown column 'p.id_categoria' in 'on clause' in C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\prunac\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\prunac\app\Models\ProductosModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\prunac\app\Controllers\Productos.php(23): App\Models\ProductosModel->getProductos()
+#6 C:\xampp\htdocs\prunac\system\CodeIgniter.php(932): App\Controllers\Productos->index()
+#7 C:\xampp\htdocs\prunac\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#8 C:\xampp\htdocs\prunac\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\prunac\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-08-31 03:06:49 --> Unknown column 'p.id_categoria' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = :p.estado:', [...], false)
+ 5 APPPATH\Models\ProductosModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Productos.php(23): App\Models\ProductosModel->getProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Productos->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-08-31 03:06:59 --> mysqli_sql_exception: Unknown column 'p.id_categoria' in 'on clause' in C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\prunac\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\prunac\app\Models\CategoriasModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\prunac\app\Controllers\Categorias.php(23): App\Models\CategoriasModel->getCategorias()
+#6 C:\xampp\htdocs\prunac\system\CodeIgniter.php(932): App\Controllers\Categorias->index()
+#7 C:\xampp\htdocs\prunac\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categorias))
+#8 C:\xampp\htdocs\prunac\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\prunac\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-08-31 03:06:59 --> Unknown column 'p.id_categoria' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `categoria` `c`
+JOIN `producto` `p` ON `c`.`idcategoria` = `p`.`id_categoria`
+WHERE `c`.`estado` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `categoria` `c`
+JOIN `producto` `p` ON `c`.`idcategoria` = `p`.`id_categoria`
+WHERE `c`.`estado` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `categoria` `c`
+JOIN `producto` `p` ON `c`.`idcategoria` = `p`.`id_categoria`
+WHERE `c`.`estado` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `categoria` `c`
+JOIN `producto` `p` ON `c`.`idcategoria` = `p`.`id_categoria`
+WHERE `c`.`estado` = :c.estado:', [...], false)
+ 5 APPPATH\Models\CategoriasModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Categorias.php(23): App\Models\CategoriasModel->getCategorias()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categorias->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categorias))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-08-31 03:09:33 --> mysqli_sql_exception: Unknown column 'p.id_categoria' in 'on clause' in C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\prunac\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\prunac\app\Models\ProductosModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\prunac\app\Controllers\Productos.php(23): App\Models\ProductosModel->getProductos()
+#6 C:\xampp\htdocs\prunac\system\CodeIgniter.php(932): App\Controllers\Productos->index()
+#7 C:\xampp\htdocs\prunac\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#8 C:\xampp\htdocs\prunac\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\prunac\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-08-31 03:09:33 --> Unknown column 'p.id_categoria' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = :p.estado:', [...], false)
+ 5 APPPATH\Models\ProductosModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Productos.php(23): App\Models\ProductosModel->getProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Productos->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-08-31 03:10:08 --> mysqli_sql_exception: Unknown column 'p.id_categoria' in 'on clause' in C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\prunac\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\prunac\app\Models\ProductosModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\prunac\app\Controllers\Productos.php(23): App\Models\ProductosModel->getProductos()
+#6 C:\xampp\htdocs\prunac\system\CodeIgniter.php(932): App\Controllers\Productos->index()
+#7 C:\xampp\htdocs\prunac\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#8 C:\xampp\htdocs\prunac\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\prunac\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-08-31 03:10:08 --> Unknown column 'p.id_categoria' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = :p.estado:', [...], false)
+ 5 APPPATH\Models\ProductosModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Productos.php(23): App\Models\ProductosModel->getProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Productos->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-08-31 03:10:57 --> mysqli_sql_exception: Unknown column 'p.id_categoria' in 'on clause' in C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\prunac\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\prunac\app\Models\ProductosModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\prunac\app\Controllers\Productos.php(23): App\Models\ProductosModel->getProductos()
+#6 C:\xampp\htdocs\prunac\system\CodeIgniter.php(932): App\Controllers\Productos->index()
+#7 C:\xampp\htdocs\prunac\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#8 C:\xampp\htdocs\prunac\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\prunac\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-08-31 03:10:57 --> Unknown column 'p.id_categoria' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = :p.estado:', [...], false)
+ 5 APPPATH\Models\ProductosModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Productos.php(23): App\Models\ProductosModel->getProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Productos->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-08-31 03:11:54 --> mysqli_sql_exception: Unknown column 'p.id_categoria' in 'on clause' in C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\prunac\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\prunac\app\Models\ProductosModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\prunac\app\Controllers\Productos.php(23): App\Models\ProductosModel->getProductos()
+#6 C:\xampp\htdocs\prunac\system\CodeIgniter.php(932): App\Controllers\Productos->index()
+#7 C:\xampp\htdocs\prunac\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#8 C:\xampp\htdocs\prunac\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\prunac\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-08-31 03:11:54 --> Unknown column 'p.id_categoria' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = :p.estado:', [...], false)
+ 5 APPPATH\Models\ProductosModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Productos.php(23): App\Models\ProductosModel->getProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Productos->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-08-31 03:15:27 --> mysqli_sql_exception: Unknown column 'p.id_categoria' in 'on clause' in C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\prunac\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\prunac\app\Models\ProductosModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\prunac\app\Controllers\Productos.php(23): App\Models\ProductosModel->getProductos()
+#6 C:\xampp\htdocs\prunac\system\CodeIgniter.php(932): App\Controllers\Productos->index()
+#7 C:\xampp\htdocs\prunac\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#8 C:\xampp\htdocs\prunac\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\prunac\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-08-31 03:15:27 --> Unknown column 'p.id_categoria' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `producto` `p`
+JOIN `categoria` `c` ON `p`.`id_categoria` = `c`.`idcategoria`
+WHERE `p`.`estado` = :p.estado:', [...], false)
+ 5 APPPATH\Models\ProductosModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Productos.php(23): App\Models\ProductosModel->getProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Productos->index()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-31 03:23:42 --> Undefined array key "nombreCategoria"
+in APPPATH\Controllers\Categorias.php on line 124.
+ 1 APPPATH\Controllers\Categorias.php(124): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombreCategoria"', 'C:\\xampp\\htdocs\\prunac\\app\\Controllers\\Categorias.php', 124)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categorias->create()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categorias))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-31 03:25:07 --> Undefined array key "nombreCategoria"
+in APPPATH\Controllers\Categorias.php on line 124.
+ 1 APPPATH\Controllers\Categorias.php(124): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombreCategoria"', 'C:\\xampp\\htdocs\\prunac\\app\\Controllers\\Categorias.php', 124)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categorias->create()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categorias))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-31 03:31:47 --> Undefined array key "categoria_id"
+in APPPATH\Controllers\Categorias.php on line 104.
+ 1 APPPATH\Controllers\Categorias.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "categoria_id"', 'C:\\xampp\\htdocs\\prunac\\app\\Controllers\\Categorias.php', 104)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categorias->create()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categorias))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-31 03:35:09 --> Undefined array key "idcategoria"
+in APPPATH\Controllers\Categorias.php on line 104.
+ 1 APPPATH\Controllers\Categorias.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "idcategoria"', 'C:\\xampp\\htdocs\\prunac\\app\\Controllers\\Categorias.php', 104)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categorias->create()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categorias))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-31 03:37:24 --> Undefined array key "nombreCategoria"
+in APPPATH\Controllers\Categorias.php on line 104.
+ 1 APPPATH\Controllers\Categorias.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombreCategoria"', 'C:\\xampp\\htdocs\\prunac\\app\\Controllers\\Categorias.php', 104)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categorias->create()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categorias))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-31 03:39:52 --> Undefined array key "categoria_id"
+in APPPATH\Controllers\Categorias.php on line 104.
+ 1 APPPATH\Controllers\Categorias.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "categoria_id"', 'C:\\xampp\\htdocs\\prunac\\app\\Controllers\\Categorias.php', 104)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categorias->create()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categorias))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-31 03:43:33 --> Undefined array key "categoria_id"
+in APPPATH\Controllers\Categorias.php on line 16.
+ 1 APPPATH\Controllers\Categorias.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "categoria_id"', 'C:\\xampp\\htdocs\\prunac\\app\\Controllers\\Categorias.php', 16)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categorias->index()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categorias))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-31 03:43:42 --> Undefined array key "categoria_id"
+in APPPATH\Controllers\Categorias.php on line 16.
+ 1 APPPATH\Controllers\Categorias.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "categoria_id"', 'C:\\xampp\\htdocs\\prunac\\app\\Controllers\\Categorias.php', 16)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categorias->index()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categorias))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-31 03:54:26 --> Undefined array key "categoria_id"
+in APPPATH\Controllers\Categorias.php on line 16.
+ 1 APPPATH\Controllers\Categorias.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "categoria_id"', 'C:\\xampp\\htdocs\\prunac\\app\\Controllers\\Categorias.php', 16)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categorias->index()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categorias))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-31 04:02:48 --> Undefined array key "categoria_id"
+in APPPATH\Controllers\Categorias.php on line 16.
+ 1 APPPATH\Controllers\Categorias.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "categoria_id"', 'C:\\xampp\\htdocs\\prunac\\app\\Controllers\\Categorias.php', 16)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categorias->index()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categorias))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-08-31 23:29:28 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`unac`.`producto`, CONSTRAINT `fk_producto_categoria` FOREIGN KEY (`idcategoria`) REFERENCES `categoria` (`idcategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\prunac\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\prunac\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\prunac\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\prunac\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\prunac\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\prunac\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\prunac\app\Controllers\Productos.php(129): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\prunac\system\CodeIgniter.php(932): App\Controllers\Productos->create()
+#9 C:\xampp\htdocs\prunac\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+#10 C:\xampp\htdocs\prunac\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\prunac\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-08-31 23:29:28 --> Cannot add or update a child row: a foreign key constraint fails (`unac`.`producto`, CONSTRAINT `fk_producto_categoria` FOREIGN KEY (`idcategoria`) REFERENCES `categoria` (`idcategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `producto` (`nombre`, `descripcion`) VALUES (\'Impacto De la Industria\', \'Medimos el calentamiento fabricado por las empresas\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `producto` (`nombre`, `descripcion`) VALUES (\'Impacto De la Industria\', \'Medimos el calentamiento fabricado por las empresas\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `producto` (`nombre`, `descripcion`) VALUES (\'Impacto De la Industria\', \'Medimos el calentamiento fabricado por las empresas\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`nombre`, `descripcion`) VALUES (:nombre:, :descripcion:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Productos.php(129): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Productos->create()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Productos))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
