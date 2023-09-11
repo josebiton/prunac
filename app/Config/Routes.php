@@ -58,6 +58,8 @@ $routes->resource('productos');
 $routes->resource('categorias');
 $routes->resource('clientes');
 $routes->resource('opiniones');
+$routes->resource('situacion');
+$routes->resource('objetivos');
 
 
 

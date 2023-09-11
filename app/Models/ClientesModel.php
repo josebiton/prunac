@@ -9,7 +9,7 @@ class ClientesModel extends Model
   protected $table      = 'clientes';
   protected $primaryKey = 'idclientes';
   protected $returnType     = 'array';
-  protected $allowedFields = ['nombreCliente','apellidoCliente','emailCliente','estado'];
+  protected $allowedFields = ['nombreCliente','apellidoCliente','emailCliente','imagen','estado'];
 
   public function getClientes()
   {

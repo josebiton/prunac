@@ -105,7 +105,8 @@ class Clientes extends Controller{
                         $datos = array(
                             "nombreCliente"=>$request->getVar("nombreCliente"),
                             "apellidoCliente"=>$request->getVar("apellidoCliente"),
-                            "emailCliente"=>$request->getVar("emailCliente")
+                            "emailCliente"=>$request->getVar("emailCliente"),
+                            "imagen"=>$request->getVar("imagen")
                             
                             
                         );
@@ -113,7 +114,9 @@ class Clientes extends Controller{
                             $validation->setRules([
                                 "nombreCliente"=>'required|string|max_length[255]',
                                 "apellidoCliente"=>'required|string|max_length[255]',
-                                "emailCliente" =>'required|string|max_length[255]'
+                                "emailCliente" =>'required|string|max_length[255]',
+                                "imagen" =>'required|string|max_length[255]'
+
 
                                 
                             ]);
@@ -128,6 +131,7 @@ class Clientes extends Controller{
                                     "nombreCliente"=>$datos["nombreCliente"],
                                     "apellidoCliente"=>$datos["apellidoCliente"],
                                     "emailCliente"=>$datos["emailCliente"],
+                                    "imagen"=>$datos["imagen"]
                                    
                                 );
                                 $model = new ClientesModel();
@@ -179,7 +183,8 @@ class Clientes extends Controller{
                             $validation->setRules([
                               "nombreCliente"=>'required|string|max_length[255]',
                               "apellidoCliente"=>'required|string|max_length[255]',
-                              "emailCliente" =>'required|string|max_length[255]'
+                              "emailCliente" =>'required|string|max_length[255]',
+                              "imagen" =>'required|string|max_length[255]'
                                 
                             ]);
                             $validation->withRequest($this->request)->run();
@@ -202,6 +207,7 @@ class Clientes extends Controller{
                                       "nombreCliente"=>$datos["nombreCliente"],
                                       "apellidoCliente"=>$datos["apellidoCliente"],
                                       "emailCliente"=>$datos["emailCliente"],
+                                      "imagen"=>$datos["imagen"]
                                         
                                     );
                                     $model = new ClientesModel();

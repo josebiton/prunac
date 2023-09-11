@@ -1,9 +1,9 @@
 <?php
 namespace App\Controllers;
 use CodeIgniter\Controller;
-use App\Models\CategoriasModel;
+use App\Models\SituacionModel;
 use App\Models\RegistrosModel;
-class Categorias extends Controller{
+class Situacion extends Controller{
     public function index(){
         $request = \Config\Services::request();
         $validation = \Config\Services::validation();
@@ -14,19 +14,19 @@ class Categorias extends Controller{
         foreach($registro as $key=>$value){
             if(array_key_exists('Authorization',$headers) && !empty($headers['Authorization'])){
                 if($request->getHeader('Authorization')=='Authorization: Basic '.base64_encode($value['cliente_id'].':'.$value['llave_secreta'])){
-                    $model = new CategoriasModel();
-                    $categoria = $model->getCategorias();
-                    if(!empty($categoria)){
+                    $model = new SituacionModel();
+                    $situacion = $model->getSituacion();
+                    if(!empty($situacion)){
                         $data = array(
                             "status" => 200,
-                            "total de registros"=>count($categoria),
-                            "Detalles" => $categoria
+                            "total de registros"=>count($situacion),
+                            "Detalles" => $situacion
                         );
                     }
                     else{
                         $data = array(
                             "status" => 200,
-                            "total de registros"=>count($categoria),
+                            "total de registros"=>count($situacion),
                             "Detalles" => "no hay registros"
                         );
                     }
@@ -35,7 +35,7 @@ class Categorias extends Controller{
                 else{
                     $data = array(
                         "Status"=>404,
-                        "Detalles"=>"El token es incorrecto o tu código está mal -_-"
+                        "Detalles"=>"El token es incorrecto "
                     );
                 }
             }
@@ -59,18 +59,18 @@ class Categorias extends Controller{
         foreach($registro as $key=>$value){
             if(array_key_exists('Authorization',$headers) && !empty($headers['Authorization'])){
                 if($request->getHeader('Authorization')=='Authorization: Basic '.base64_encode($value['cliente_id'].':'.$value['llave_secreta'])){
-                    $model = new CategoriasModel();
-                    $categoria = $model->getId($id);
-                    if(!empty($categoria)){
+                    $model = new SituacionModel();
+                    $situacion = $model->getId($id);
+                    if(!empty($situacion)){
                         $data = array(
                             "status" => 200,
-                            "Detalles" => $categoria
+                            "Detalles" => $situacion
                         );
                     }
                     else{
                         $data = array(
                             "status" => 404,
-                            "Detalles" => "No hay registro o tu código está mal -_-"
+                            "Detalles" => "No hay registro de la situacion"
                         );
                     }
                     return json_encode($data, true);
@@ -78,7 +78,7 @@ class Categorias extends Controller{
                 else{
                     $data = array(
                         "Status"=>404,
-                        "Detalles"=>"El token es incorrecto o tu código está mal -_-"
+                        "Detalles"=>"El token es incorrecto "
                     );
                 }
             }
@@ -103,17 +103,13 @@ class Categorias extends Controller{
             if(array_key_exists('Authorization',$headers) && !empty($headers['Authorization'])){
                 if($request->getHeader('Authorization')=='Authorization: Basic '.base64_encode($value['cliente_id'].':'.$value['llave_secreta'])){
                         $datos = array(
-                            "idobjetivos"=>$request->getVar("idobjetivos"),
-                            "nombreCategoria"=>$request->getVar("nombreCategoria"),
-                            "descripcionCategoria"=>$request->getVar("descripcionCategoria")
-                            
+                            "situacion"=>$request->getVar("situacion")
+                             
                         );
                         if(!empty($datos)){
                             $validation->setRules([
-                                "idobjetivos"=>'required|string|max_length[255]',
-                                "nombreCategoria"=>'required|string|max_length[255]',
-                                "descripcionCategoria"=>'required|string|max_length[255]'
-                                
+                                "situacion"=>'required|string|max_length[255]'
+                                  
                             ]);
                             $validation->withRequest($this->request)->run();
                             if($validation->getErrors()){
@@ -123,13 +119,12 @@ class Categorias extends Controller{
                             }
                             else{
                                 $datos = array(
-                                    "idobjetivos"=>$datos["idobjetivos"],
-                                    "nombreCategoria"=>$datos["nombreCategoria"],
-                                    "descripcionCategoria"=>$datos["descripcionCategoria"]
+                                    "situacion"=>$datos["situacion"]
+                                    
                                    
                                 );
-                                $model = new CategoriasModel();
-                                $categoria = $model->insert($datos);
+                                $model = new SituacionModel();
+                                $situacion = $model->insert($datos);
                                 $data = array(
                                     "Status"=>200,
                                     "Detalle"=>"Registro existoso"
@@ -175,10 +170,8 @@ class Categorias extends Controller{
                         $datos = $this->request->getRawInput();
                         if(!empty($datos)){
                             $validation->setRules([
-                                "idobjetivos"=>'required|string|max_length[255]',
-                                "nombreCategoria"=>'required|string|max_length[255]',
-                                "descripcionCategoria"=>'required|string|max_length[255]'
-                                
+                              "situacion"=>'required|string|max_length[255]'
+                              
                             ]);
                             $validation->withRequest($this->request)->run();
                             if($validation->getErrors()){
@@ -187,9 +180,9 @@ class Categorias extends Controller{
                                 return json_encode($data, true);
                             }
                             else{
-                                $model = new CategoriasModel();
-                                $categoria = $model->find($id);
-                                if(is_null($categoria)){
+                                $model = new SituacionModel();
+                                $situacion = $model->find($id);
+                                if(is_null($situacion)){
                                     $data = array(
                                         "Status"=>404, 
                                         "Detalles"=>"registro no existe"
@@ -197,13 +190,11 @@ class Categorias extends Controller{
                                     return json_encode ($data, true);
                                 }else{
                                     $datos = array(
-                                        "idobjetivos"=>$datos["idobjetivos"],
-                                        "nombreCategoria"=>$datos["nombreCategoria"],
-                                        "descripcionCategoria"=>$datos["descripcionCategoria"]
+                                      "situacion"=>$datos["situacion"]
                                         
                                     );
-                                    $model = new CategoriasModel();
-                                    $categoria  = $model->update($id, $datos);
+                                    $model = new SituacionModel();
+                                    $situacion  = $model->update($id, $datos);
                                     $data = array(
                                         "Status"=>200, 
                                         "Detalles"=>"datos actualizados"
@@ -247,20 +238,20 @@ class Categorias extends Controller{
         foreach($registro as $key=>$value){
             if(array_key_exists('Authorization',$headers) && !empty($headers['Authorization'])){
                 if($request->getHeader('Authorization')=='Authorization: Basic '.base64_encode($value['cliente_id'].':'.$value['llave_secreta'])){
-                    $model = new CategoriasModel();
-                    $categoria = $model->where('estado',1)->find($id);
-                    if(!empty($categoria)){
+                    $model = new SituacionModel();
+                    $situacion = $model->where('estado',1)->find($id);
+                    if(!empty($situacion)){
                         $datos = array("estado"=>0);
-                        $categoria = $model->update($id, $datos);
+                        $situacion = $model->update($id, $datos);
                         $data = array(
                             "status" => 200,
-                            "Detalles" => "se ha eliminado la categoria"
+                            "Detalles" => "se ha eliminado el registro"
                         );
                     }
                     else{
                         $data = array(
                             "status" => 404,
-                            "Detalles" => "No hay Categorias"
+                            "Detalles" => "No hay registros "
                         );
                     }
                     return json_encode($data, true);
