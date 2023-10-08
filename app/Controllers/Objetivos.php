@@ -115,8 +115,8 @@ class Objetivos extends Controller{
                                 "idsituacion"=>'required|string|max_length[255]',
                                 "nombreObjetivo"=>'required|string|max_length[255]',
                                 "descripcionObjetivo"=>'required|string|max_length[255]',
-                                "fechaInicio"=>'required|date|max_length[255]',
-                                "fechaFinal"=>'required|date|max_length[255]'
+                                "fechaInicio"=>'required|string|max_length[255]',
+                                "fechaFinal"=>'required|string|max_length[255]'
                                 
                             ]);
                             $validation->withRequest($this->request)->run();
@@ -168,7 +168,7 @@ class Objetivos extends Controller{
         return json_encode($data, true);
     }
 
-    public function update($id){
+    public function upstring($id){
         $request = \Config\Services::request();
         $validation = \Config\Services::validation();
         $headers = $request->getHeaders();
@@ -184,8 +184,8 @@ class Objetivos extends Controller{
                               "idsituacion"=>'required|string|max_length[255]',
                               "nombreObjetivo"=>'required|string|max_length[255]',
                               "descripcionObjetivo"=>'required|string|max_length[255]',
-                              "fechaInicio"=>'required|date|max_length[255]',
-                              "fechaFinal"=>'required|date|max_length[255]'
+                              "fechaInicio"=>'required|string|max_length[255]',
+                              "fechaFinal"=>'required|string|max_length[255]'
                                 
                             ]);
                             $validation->withRequest($this->request)->run();
@@ -213,7 +213,7 @@ class Objetivos extends Controller{
                                         
                                     );
                                     $model = new ObjetivosModel();
-                                    $objetivos  = $model->update($id, $datos);
+                                    $objetivos  = $model->upstring($id, $datos);
                                     $data = array(
                                         "Status"=>200, 
                                         "Detalles"=>"datos actualizados"
@@ -261,7 +261,7 @@ class Objetivos extends Controller{
                     $objetivos = $model->where('estado',1)->find($id);
                     if(!empty($objetivos)){
                         $datos = array("estado"=>0);
-                        $objetivos = $model->update($id, $datos);
+                        $objetivos = $model->upstring($id, $datos);
                         $data = array(
                             "status" => 200,
                             "Detalles" => "se ha eliminado el registro"
