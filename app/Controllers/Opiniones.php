@@ -80,13 +80,13 @@ class Opiniones extends Controller
         } else {
           $data = array(
             "Status" => 404,
-            "Detalles" => "El token es incorrecto "
+            "Detalles" => "El token es incorrectooooooooooooooooooo "
           );
         }
       } else {
         $data = array(
           "Status" => 404,
-          "Detalles" => "No posee autorización llame al ing biton"
+          "Detalles" => "No posee autorización llame al ing bitonnnnnnnnnnnnnnnnnnnnn"
         );
       }
     }
