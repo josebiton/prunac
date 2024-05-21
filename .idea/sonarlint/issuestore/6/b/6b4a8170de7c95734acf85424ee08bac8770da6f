@@ -1,0 +1,21 @@
+
+{	php:S1131m"@Remove the useless trailing whitespaces at the end of this line.(¥„›¿J$2bb5f4a2-561a-4544-8005-2b0a5554d794
+	php:S1131Â"@Remove the useless trailing whitespaces at the end of this line.(™ÇÏğúÿÿÿÿJ$9966c7e6-80f3-45eb-8420-21d85edc5674
+|	php:S1142`"<This method has 4 returns, which is more than the 3 allowed.(­ùê“ûÿÿÿÿJ$af92ecab-601f-434f-92b6-c27d731ad014
+x	php:S1142Ÿ"<This method has 5 returns, which is more than the 3 allowed.(ƒ®ô‰J$c5b7f609-d9d7-47c6-9937-2fd53f7df3b1
+”	php:S3776`"TRefactor this function to reduce its Cognitive Complexity from 20 to the 15 allowed.(­ùê“ûÿÿÿÿJ$04fe7ce4-fa5f-4f50-8bbf-dcee955f6a5f
+	php:S3776Ÿ"TRefactor this function to reduce its Cognitive Complexity from 27 to the 15 allowed.(ƒ®ô‰J$70b1b59c-b67b-4dc5-b4da-60fd13b7db5f
+–	php:S1192"VDefine a constant instead of duplicating this literal "Authorization: Basic " 5 times.(ÓÜµªıÿÿÿÿJ$f8518dec-31d1-40ae-b8bf-851534612d7f
+’	php:S1192/"WDefine a constant instead of duplicating this literal "No posee autorizaciÃ³n" 4 times.(Ñ…¼ŒJ$a4f5fbfa-e11f-4282-9f27-4a811105fe41
+›	php:S1192q"`Define a constant instead of duplicating this literal "required|string|max_length[255]" 4 times.(Çâ±ÕJ$c63bfd16-d818-4c42-9645-f3f6c6b02279
+p	php:S1481"0Remove this unused "$validation" local variable.(ˆÛÄ€ûÿÿÿÿJ$140d5c1b-0615-44fb-a6ca-a915247e7b4d
+d	php:S1481")Remove this unused "$key" local variable.(ÔŞùÏJ$64fdbcbf-1db3-440f-9e70-138e03effcae
+p	php:S1481:"0Remove this unused "$validation" local variable.(ˆÛÄ€ûÿÿÿÿJ$324c00af-da9e-495b-92c0-c814a53b71be
+d	php:S1481?")Remove this unused "$key" local variable.(ÔŞùÏJ$024931ad-a43c-48c4-9e40-5e6733203b29
+q	php:S1481ç"0Remove this unused "$validation" local variable.(ˆÛÄ€ûÿÿÿÿJ$033ba2dc-9d09-40e5-8660-61c8e53fc29e
+e	php:S1481ì")Remove this unused "$key" local variable.(ÔŞùÏJ$faacbeee-da03-4c97-8014-2efaa5cc73e3
+e	php:S1481§")Remove this unused "$key" local variable.(ÔŞùÏJ$eefcdc5f-461a-4eaf-b03f-eb6a4edb50e4
+d	php:S1481h")Remove this unused "$key" local variable.(ÔŞùÏJ$6afe048b-c5bf-417c-9ca9-7815a42b97f9
+h	php:S1481",Remove this unused "$coment" local variable.(ıÒçJ$1ccd2716-3361-4b3e-8f09-b946386b14ba
+|	php:S1854Å";Remove this useless assignment to local variable '$coment'.(‚Û¿úÿÿÿÿJ$33be4d6b-658c-4ea0-a203-fdb0c4a11f43
+|	php:S1854ó";Remove this useless assignment to local variable '$coment'.(‚Û¿úÿÿÿÿJ$3bdb51d5-aa5a-4900-b496-31a026d8b491

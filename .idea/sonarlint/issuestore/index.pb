@@ -9,3 +9,5 @@ H
 sonar-proyect.properties,3\2\32747051333ac00d14555bd9a23170bbccdee0d9
 K
 .github/workflows/build.yml,f\e\fe77d5d1439f26e353a42bbd38dece2467ff6558
+M
+app/Controllers/Opiniones.php,6\b\6b4a8170de7c95734acf85424ee08bac8770da6f

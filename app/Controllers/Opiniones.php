@@ -50,6 +50,7 @@ class Opiniones extends Controller
     }
     return json_encode($data, true);
   }
+// hola Mundo
 
   public function show($id)
   {
@@ -85,7 +86,7 @@ class Opiniones extends Controller
       } else {
         $data = array(
           "Status" => 404,
-          "Detalles" => "No posee autorización"
+          "Detalles" => "No posee autorización llame al ing biton"
         );
       }
     }
