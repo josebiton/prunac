@@ -5,7 +5,7 @@ pipeline {
         
         stage('Preparacion'){
             steps {
-                git 'git@github.com:josebiton/prunac.git'
+                git branch:'main',url:'https://github.com/josebiton/prunac.git'
    	       		echo 'Pulled from github successfully'
             }
         }
