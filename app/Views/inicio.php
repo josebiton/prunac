@@ -1,4 +1,7 @@
 <?php
+if (php_sapi_name() == 'cli') {
+    $_SERVER["REQUEST_METHOD"] = 'CLI';
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$curl = curl_init();
 	curl_setopt_array($curl, array(
